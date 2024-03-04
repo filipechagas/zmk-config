@@ -1,10 +1,23 @@
 # Hillside ZMK firmware
+![hilda](https://github.com/filipechagas/zmk-config/assets/131353/befd3eaf-b08a-4d4a-8952-1a0766791256)
 
-![hillside](https://github.com/FilippeMafra/hillside-zmk-config/assets/7794852/e77daf85-38e3-406f-ad33-0ac3d3c258df)
 
+[![.github/workflows/build.yml](https://github.com/filipechagas/zmk-config/actions/workflows/build.yml/badge.svg)](https://github.com/filipechagas/zmk-config/actions/workflows/build.yml)
 
-[![Build](https://github.com/FilippeMafra/hillside-zmk-config/actions/workflows/build.yml/badge.svg)](https://github.com/FilippeMafra/hillside-zmk-config/actions/workflows/build.yml)
+## Layers (WIP)
 
+![CleanShot 2024-03-04 at 12 40 22](https://github.com/filipechagas/zmk-config/assets/131353/afbaf468-b0f7-45b3-afe6-0fb2ef6bb4f5)
+![CleanShot 2024-03-04 at 12 41 50](https://github.com/filipechagas/zmk-config/assets/131353/441dc027-b2ce-4513-829a-5ed81cea0c03)
+![CleanShot 2024-03-04 at 12 42 16](https://github.com/filipechagas/zmk-config/assets/131353/af4ddc4f-9bc5-4fea-b5cc-189f2ad927df)
+![CleanShot 2024-03-04 at 12 42 31](https://github.com/filipechagas/zmk-config/assets/131353/39926aa2-f853-4c0e-99e8-b2b35246c4f9)
+![CleanShot 2024-03-04 at 12 42 46](https://github.com/filipechagas/zmk-config/assets/131353/4c3f7ddd-c4f3-4ac2-bc51-5f15e6a7cd91)
+![CleanShot 2024-03-04 at 12 43 08](https://github.com/filipechagas/zmk-config/assets/131353/442b60a4-ace8-4a99-b8b8-0d9d3444862a)
+![CleanShot 2024-03-04 at 12 43 22](https://github.com/filipechagas/zmk-config/assets/131353/b69d302c-4939-47e4-b00f-6bb5286243b8)
+
+## Timewless home row mod
+I'm copying the implementation of timeless homerow mods from https://github.com/urob/zmk-config/tree/main?tab=readme-ov-file#timeless-homerow-mods
+
+## What am I looking at?
 This is the [ZMK](https://zmk.dev/docs) firmware
  for the [Hillside](https://github.com/mmccoyd/hillside) family of split ergonomic keyboards.
 
