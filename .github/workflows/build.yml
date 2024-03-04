@@ -1,6 +1,10 @@
+name: Build config
 on: [push, pull_request, workflow_dispatch]
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   build:
     uses: filipechagas/zmk/.github/workflows/build-user-config.yml@build-with-submodules
-
