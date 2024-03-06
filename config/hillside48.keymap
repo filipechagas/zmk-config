@@ -37,14 +37,6 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        binus: backspace_minus {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp MINUS>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         hml: home_row_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -78,7 +70,7 @@
         default_layer {
             bindings = <
 //    ┌───────────────┬──────────────┬─────────────────┬─────────────────┬───────────────┬───────────┐                            ┌─────────────────┬───────────────┬──────────────────┬───────────────┬─────────────────┬──────────────────┐
-//    │    &trave     │    &kp Q     │      &kp W      │      &kp E      │     &kp R     │   &kp T   │                            │      &kp Y      │     &kp U     │      &kp I       │     &kp O     │      &kp P      │      &binus      │
+//    │    &trave     │    &kp Q     │      &kp W      │      &kp E      │     &kp R     │   &kp T   │                            │      &kp Y      │     &kp U     │      &kp I       │     &kp O     │      &kp P      │  &kp BACKSPACE   │
 //    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼───────────┤                            ├─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
 //    │ &mt LCTRL ESC │ &hml LCTRL A │ &hml LEFT_ALT S │ &hml LEFT_WIN D │ &hml LSHIFT F │   &kp G   │                            │      &kp H      │ &hmr RSHIFT J │ &hmr RIGHT_WIN K │  &hmr RALT L  │ &hmr RCTRL SEMI │ &kp SINGLE_QUOTE │
 //    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼───────────┼──────────────┐   ┌─────────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
@@ -86,7 +78,7 @@
 //    └───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼───────────┼──────────────┘   └─────────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┘
 //                    │ &kp LEFT_ALT │  &kp LEFT_WIN   │    &mo NAV_L    │   &mo NUM_L   │ &kp SPACE │                            │ &lt NUM_L ENTER │   &mo SYM_L   │    &mo SYM2_L    │ &kp RIGHT_WIN │    &kp RALT     │                   
 //                    └──────────────┴─────────────────┴─────────────────┴───────────────┴───────────┘                            └─────────────────┴───────────────┴──────────────────┴───────────────┴─────────────────┘                   
-  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                    &kp Y             &kp U           &kp I              &kp O           &kp P             &binus          
+  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                    &kp Y             &kp U           &kp I              &kp O           &kp P             &kp BACKSPACE   
   &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                    &kp H             &hmr RSHIFT J   &hmr RIGHT_WIN K   &hmr RALT L     &hmr RCTRL SEMI   &kp SINGLE_QUOTE
   &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B       &kp LEFT_WIN       &kp ESC   &kp N             &kp M           &kp COMMA          &kp DOT         &kp SLASH         &kp RSHFT       
                   &kp LEFT_ALT   &kp LEFT_WIN      &mo NAV_L         &mo NUM_L       &kp SPACE                                &lt NUM_L ENTER   &mo SYM_L       &mo SYM2_L         &kp RIGHT_WIN   &kp RALT                          
@@ -138,16 +130,16 @@
         nav_layer {
             bindings = <
 //    ┌───────────┬──────────────────┬──────────────┬──────────────┬────────────────┬────────┐                     ┌────────────────┬────────────────────┬─────────────────────┬─────────────────┬────────────────┬─────────────────┐
-//    │ &kp GRAVE │      &kp N1      │    &kp N2    │    &kp N3    │     &kp N4     │ &kp N5 │                     │     &kp N6     │       &kp N7       │       &kp N8        │     &kp N9      │     &kp N0     │   &kp PAGE_UP   │
+//    │ &kp GRAVE │      &kp N1      │    &kp N2    │    &kp N3    │     &kp N4     │ &kp N5 │                     │     &kp N6     │       &kp N7       │       &kp N8        │     &kp N9      │     &kp N0     │  &kp BACKSPACE  │
 //    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┤                     ├────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
-//    │  &kp ESC  │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                     │ &kp LEFT_ARROW │   &kp DOWN_ARROW   │    &kp UP_ARROW     │ &kp RIGHT_ARROW │  &kp UP_ARROW  │  &kp PAGE_DOWN  │
+//    │  &kp ESC  │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                     │ &kp LEFT_ARROW │   &kp DOWN_ARROW   │    &kp UP_ARROW     │ &kp RIGHT_ARROW │  &kp UP_ARROW  │     &trans      │
 //    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┐   ┌────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
 //    │  &trans   │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │ &trans │   │ &trans │     &trans     │ &kp LG(LEFT_BRACE) │ &kp LG(RIGHT_BRACE) │     &trans      │ &kp DOWN_ARROW │ &kp RIGHT_ARROW │
 //    └───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┘   └────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┘
 //                │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                     │     &trans     │       &trans       │        &mo 6        │     &trans      │ &kp LEFT_ARROW │                  
 //                └──────────────────┴──────────────┴──────────────┴────────────────┴────────┘                     └────────────────┴────────────────────┴─────────────────────┴─────────────────┴────────────────┘                  
-  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                         &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp PAGE_UP    
-  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &kp PAGE_DOWN  
+  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                         &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp BACKSPACE  
+  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &trans         
   &trans      &trans             &trans         &trans         &trans           &trans   &trans       &trans   &trans           &kp LG(LEFT_BRACE)   &kp LG(RIGHT_BRACE)   &trans            &kp DOWN_ARROW   &kp RIGHT_ARROW
               &trans             &trans         &trans         &trans           &trans                         &trans           &trans               &mo 6                 &trans            &kp LEFT_ARROW                  
             >;
