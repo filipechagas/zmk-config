@@ -72,19 +72,19 @@
 
         default_layer {
             bindings = <
-//    ┌───────────────┬──────────────┬─────────────────┬─────────────────┬───────────────┬────────────────────┐                   ┌─────────────────┬───────────────┬──────────────────┬───────────────┬─────────────────┬──────────────────┐
-//    │    &trave     │    &kp Q     │      &kp W      │      &kp E      │     &kp R     │       &kp T        │                   │      &kp Y      │     &kp U     │      &kp I       │     &kp O     │      &kp P      │  &kp BACKSPACE   │
-//    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┤                   ├─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
-//    │ &mt LCTRL ESC │ &hml LCTRL A │ &hml LEFT_ALT S │ &hml LEFT_WIN D │ &hml LSHIFT F │       &kp G        │                   │      &kp H      │ &hmr RSHIFT J │ &hmr RIGHT_WIN K │  &hmr RALT L  │ &hmr RCTRL SEMI │ &kp SINGLE_QUOTE │
-//    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┼───────┐   ┌───────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
-//    │   &kp LSHFT   │    &kp Z     │      &kp X      │      &kp C      │     &kp V     │       &kp B        │ &to 3 │   │ &to 2 │      &kp N      │     &kp M     │    &kp COMMA     │    &kp DOT    │    &kp SLASH    │    &kp RSHFT     │
-//    └───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┼───────┘   └───────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┘
-//                    │ &kp LEFT_ALT │  &kp LEFT_WIN   │    &mo NAV_L    │   &mo NUM_L   │ &mt LEFT_WIN SPACE │                   │ &lt NUM_L ENTER │     &mo 5     │      &mo 1       │ &kp RIGHT_WIN │    &kp RALT     │                   
-//                    └──────────────┴─────────────────┴─────────────────┴───────────────┴────────────────────┘                   └─────────────────┴───────────────┴──────────────────┴───────────────┴─────────────────┘                   
-  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                    &kp Y             &kp U           &kp I              &kp O           &kp P             &kp BACKSPACE   
-  &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                    &kp H             &hmr RSHIFT J   &hmr RIGHT_WIN K   &hmr RALT L     &hmr RCTRL SEMI   &kp SINGLE_QUOTE
-  &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B                &to 3       &to 2   &kp N             &kp M           &kp COMMA          &kp DOT         &kp SLASH         &kp RSHFT       
-                  &kp LEFT_ALT   &kp LEFT_WIN      &mo NAV_L         &mo NUM_L       &mt LEFT_WIN SPACE                       &lt NUM_L ENTER   &mo 5           &mo 1              &kp RIGHT_WIN   &kp RALT                          
+//    ┌───────────────┬──────────────┬─────────────────┬─────────────────┬───────────────┬────────────────────┐                                          ┌─────────────────┬───────────────┬──────────────────┬───────────────┬─────────────────┬──────────────────┐
+//    │    &trave     │    &kp Q     │      &kp W      │      &kp E      │     &kp R     │       &kp T        │                                          │      &kp Y      │     &kp U     │      &kp I       │     &kp O     │      &kp P      │  &kp BACKSPACE   │
+//    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┤                                          ├─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
+//    │ &mt LCTRL ESC │ &hml LCTRL A │ &hml LEFT_ALT S │ &hml LEFT_WIN D │ &hml LSHIFT F │       &kp G        │                                          │      &kp H      │ &hmr RSHIFT J │ &hmr RIGHT_WIN K │  &hmr RALT L  │ &hmr RCTRL SEMI │ &kp SINGLE_QUOTE │
+//    ├───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┼──────────────────┐   ┌───────────────────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┤
+//    │   &kp LSHFT   │    &kp Z     │      &kp X      │      &kp C      │     &kp V     │       &kp B        │ &kp LEFT_BRACKET │   │ &kp RIGHT_BRACKET │      &kp N      │     &kp M     │    &kp COMMA     │    &kp DOT    │    &kp SLASH    │    &kp RSHFT     │
+//    └───────────────┼──────────────┼─────────────────┼─────────────────┼───────────────┼────────────────────┼──────────────────┘   └───────────────────┼─────────────────┼───────────────┼──────────────────┼───────────────┼─────────────────┼──────────────────┘
+//                    │ &kp LEFT_ALT │  &kp LEFT_WIN   │    &mo NAV_L    │   &mo NUM_L   │ &mt LEFT_WIN SPACE │                                          │ &lt NUM_L ENTER │     &mo 5     │      &mo 1       │ &kp RIGHT_WIN │    &kp RALT     │                   
+//                    └──────────────┴─────────────────┴─────────────────┴───────────────┴────────────────────┘                                          └─────────────────┴───────────────┴──────────────────┴───────────────┴─────────────────┘                   
+  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                                           &kp Y             &kp U           &kp I              &kp O           &kp P             &kp BACKSPACE   
+  &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                                           &kp H             &hmr RSHIFT J   &hmr RIGHT_WIN K   &hmr RALT L     &hmr RCTRL SEMI   &kp SINGLE_QUOTE
+  &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B                &kp LEFT_BRACKET       &kp RIGHT_BRACKET   &kp N             &kp M           &kp COMMA          &kp DOT         &kp SLASH         &kp RSHFT       
+                  &kp LEFT_ALT   &kp LEFT_WIN      &mo NAV_L         &mo NUM_L       &mt LEFT_WIN SPACE                                              &lt NUM_L ENTER   &mo 5           &mo 1              &kp RIGHT_WIN   &kp RALT                          
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -112,19 +112,19 @@
 
         num_layer {
             bindings = <
-//    ┌───────────────┬──────────────────┬──────────────┬──────────────┬────────────────┬────────┐                        ┌───────────┬──────────────┬──────────────┬──────────────┬───────────────┬───────────────┐
-//    │ &kp LG(GRAVE) │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                        │ &kp SLASH │    &kp N7    │    &kp N8    │    &kp N9    │   &kp MINUS   │ &kp BACKSPACE │
-//    ├───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┤                        ├───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┤
-//    │    &kp ESC    │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                        │ &kp EQUAL │ &kp NUMBER_4 │ &kp NUMBER_5 │ &kp NUMBER_6 │   &kp PLUS    │   &kp ASTRK   │
-//    ├───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼───────┐   ┌────────────┼───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┤
-//    │    &trans     │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │ &to 0 │   │ &kp ESCAPE │ &kp COMMA │ &kp NUMBER_1 │ &kp NUMBER_2 │ &kp NUMBER_3 │ &kp BACKSLASH │   &kp SLASH   │
-//    └───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼───────┘   └────────────┼───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┘
-//                    │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                        │  &trans   │  &mo ADJ_L   │    &kp N0    │   &kp DOT    │   &kp RCTRL   │                
-//                    └──────────────────┴──────────────┴──────────────┴────────────────┴────────┘                        └───────────┴──────────────┴──────────────┴──────────────┴───────────────┘                
-  &kp LG(GRAVE)   &trans             &trans         &trans         &trans           &trans                            &kp SLASH   &kp N7         &kp N8         &kp N9         &kp MINUS       &kp BACKSPACE
-  &kp ESC         &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                            &kp EQUAL   &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp PLUS        &kp ASTRK    
-  &trans          &trans             &trans         &trans         &trans           &trans   &to 0       &kp ESCAPE   &kp COMMA   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp BACKSLASH   &kp SLASH    
-                  &trans             &trans         &trans         &trans           &trans                            &trans      &mo ADJ_L      &kp N0         &kp DOT        &kp RCTRL                    
+//    ┌───────────────┬──────────────────┬──────────────┬──────────────┬────────────────┬────────┐                     ┌───────────┬──────────────┬──────────────┬──────────────┬───────────────┬───────────────┐
+//    │ &kp LG(GRAVE) │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                     │ &kp SLASH │    &kp N7    │    &kp N8    │    &kp N9    │   &kp MINUS   │ &kp BACKSPACE │
+//    ├───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┤                     ├───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┤
+//    │    &kp ESC    │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                     │ &kp EQUAL │ &kp NUMBER_4 │ &kp NUMBER_5 │ &kp NUMBER_6 │   &kp PLUS    │   &kp ASTRK   │
+//    ├───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┐   ┌────────┼───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┤
+//    │    &trans     │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │ &trans │   │ &trans │ &kp COMMA │ &kp NUMBER_1 │ &kp NUMBER_2 │ &kp NUMBER_3 │ &kp BACKSLASH │   &kp SLASH   │
+//    └───────────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┘   └────────┼───────────┼──────────────┼──────────────┼──────────────┼───────────────┼───────────────┘
+//                    │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                     │  &trans   │  &mo ADJ_L   │    &kp N0    │   &kp DOT    │   &kp RCTRL   │                
+//                    └──────────────────┴──────────────┴──────────────┴────────────────┴────────┘                     └───────────┴──────────────┴──────────────┴──────────────┴───────────────┘                
+  &kp LG(GRAVE)   &trans             &trans         &trans         &trans           &trans                         &kp SLASH   &kp N7         &kp N8         &kp N9         &kp MINUS       &kp BACKSPACE
+  &kp ESC         &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp EQUAL   &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp PLUS        &kp ASTRK    
+  &trans          &trans             &trans         &trans         &trans           &trans   &trans       &trans   &kp COMMA   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp BACKSLASH   &kp SLASH    
+                  &trans             &trans         &trans         &trans           &trans                         &trans      &mo ADJ_L      &kp N0         &kp DOT        &kp RCTRL                    
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -132,19 +132,19 @@
 
         nav_layer {
             bindings = <
-//    ┌───────────┬──────────────────┬──────────────┬──────────────┬────────────────┬────────┐                    ┌────────────────┬────────────────────┬─────────────────────┬─────────────────┬────────────────┬─────────────────┐
-//    │ &kp GRAVE │      &kp N1      │    &kp N2    │    &kp N3    │     &kp N4     │ &kp N5 │                    │     &kp N6     │       &kp N7       │       &kp N8        │     &kp N9      │     &kp N0     │  &kp BACKSPACE  │
-//    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┤                    ├────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
-//    │  &kp ESC  │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                    │ &kp LEFT_ARROW │   &kp DOWN_ARROW   │    &kp UP_ARROW     │ &kp RIGHT_ARROW │  &kp UP_ARROW  │     &trans      │
-//    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼───────┐   ┌────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
-//    │  &trans   │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │ &to 0 │   │ &trans │     &trans     │ &kp LG(LEFT_BRACE) │ &kp LG(RIGHT_BRACE) │     &trans      │ &kp DOWN_ARROW │ &kp RIGHT_ARROW │
-//    └───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼───────┘   └────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┘
-//                │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                    │     &trans     │       &trans       │        &mo 6        │     &trans      │ &kp LEFT_ARROW │                  
-//                └──────────────────┴──────────────┴──────────────┴────────────────┴────────┘                    └────────────────┴────────────────────┴─────────────────────┴─────────────────┴────────────────┘                  
-  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                        &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp BACKSPACE  
-  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                        &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &trans         
-  &trans      &trans             &trans         &trans         &trans           &trans   &to 0       &trans   &trans           &kp LG(LEFT_BRACE)   &kp LG(RIGHT_BRACE)   &trans            &kp DOWN_ARROW   &kp RIGHT_ARROW
-              &trans             &trans         &trans         &trans           &trans                        &trans           &trans               &mo 6                 &trans            &kp LEFT_ARROW                  
+//    ┌───────────┬──────────────────┬──────────────┬──────────────┬────────────────┬────────┐                     ┌────────────────┬────────────────────┬─────────────────────┬─────────────────┬────────────────┬─────────────────┐
+//    │ &kp GRAVE │      &kp N1      │    &kp N2    │    &kp N3    │     &kp N4     │ &kp N5 │                     │     &kp N6     │       &kp N7       │       &kp N8        │     &kp N9      │     &kp N0     │  &kp BACKSPACE  │
+//    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┤                     ├────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
+//    │  &kp ESC  │ &kp LEFT_CONTROL │ &kp LEFT_ALT │ &kp LEFT_WIN │ &kp LEFT_SHIFT │ &trans │                     │ &kp LEFT_ARROW │   &kp DOWN_ARROW   │    &kp UP_ARROW     │ &kp RIGHT_ARROW │  &kp UP_ARROW  │     &trans      │
+//    ├───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┐   ┌────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┤
+//    │  &trans   │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │ &trans │   │ &trans │     &trans     │ &kp LG(LEFT_BRACE) │ &kp LG(RIGHT_BRACE) │     &trans      │ &kp DOWN_ARROW │ &kp RIGHT_ARROW │
+//    └───────────┼──────────────────┼──────────────┼──────────────┼────────────────┼────────┼────────┘   └────────┼────────────────┼────────────────────┼─────────────────────┼─────────────────┼────────────────┼─────────────────┘
+//                │      &trans      │    &trans    │    &trans    │     &trans     │ &trans │                     │     &trans     │       &trans       │        &mo 6        │     &trans      │ &kp LEFT_ARROW │                  
+//                └──────────────────┴──────────────┴──────────────┴────────────────┴────────┘                     └────────────────┴────────────────────┴─────────────────────┴─────────────────┴────────────────┘                  
+  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                         &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp BACKSPACE  
+  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &trans         
+  &trans      &trans             &trans         &trans         &trans           &trans   &trans       &trans   &trans           &kp LG(LEFT_BRACE)   &kp LG(RIGHT_BRACE)   &trans            &kp DOWN_ARROW   &kp RIGHT_ARROW
+              &trans             &trans         &trans         &trans           &trans                         &trans           &trans               &mo 6                 &trans            &kp LEFT_ARROW                  
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -192,19 +192,19 @@
 
         fun_layer {
             bindings = <
-//    ┌───────────┬────────┬──────────────┬────────────┬────────┬────────┐                     ┌────────┬────────┬────────┬────────┬─────────┬───────────────┐
-//    │ &kp GRAVE │ &trans │ &kp CAPSLOCK │ &caps_word │ &trans │ &trans │                     │ &trans │ &kp F7 │ &kp F8 │ &kp F9 │ &kp F10 │ &kp BACKSPACE │
-//    ├───────────┼────────┼──────────────┼────────────┼────────┼────────┤                     ├────────┼────────┼────────┼────────┼─────────┼───────────────┤
-//    │  &kp ESC  │ &trans │    &trans    │   &trans   │ &trans │ &trans │                     │ &trans │ &kp F4 │ &kp F5 │ &kp F6 │ &kp F11 │    &trans     │
-//    ├───────────┼────────┼──────────────┼────────────┼────────┼────────┼────────┐   ┌────────┼────────┼────────┼────────┼────────┼─────────┼───────────────┤
-//    │  &trans   │ &trans │    &trans    │   &trans   │ &trans │ &trans │ &trans │   │ &trans │ &trans │ &kp F1 │ &kp F2 │ &kp F3 │ &kp F12 │    &trans     │
-//    └───────────┼────────┼──────────────┼────────────┼────────┼────────┼────────┘   └────────┼────────┼────────┼────────┼────────┼─────────┼───────────────┘
-//                │ &trans │    &trans    │   &trans   │ &trans │ &trans │                     │ &trans │ &trans │ &trans │ &trans │ &trans  │                
-//                └────────┴──────────────┴────────────┴────────┴────────┘                     └────────┴────────┴────────┴────────┴─────────┘                
-  &kp GRAVE   &trans   &kp CAPSLOCK   &caps_word   &trans   &trans                         &trans   &kp F7   &kp F8   &kp F9   &kp F10   &kp BACKSPACE
-  &kp ESC     &trans   &trans         &trans       &trans   &trans                         &trans   &kp F4   &kp F5   &kp F6   &kp F11   &trans       
-  &trans      &trans   &trans         &trans       &trans   &trans   &trans       &trans   &trans   &kp F1   &kp F2   &kp F3   &kp F12   &trans       
-              &trans   &trans         &trans       &trans   &trans                         &trans   &trans   &trans   &trans   &trans                 
+//    ┌───────────┬────────┬──────────┬────────────┬────────┬────────┐                     ┌────────┬────────┬────────┬────────┬─────────┬───────────────┐
+//    │ &kp GRAVE │ &trans │ &kp CAPS │ &caps_word │ &trans │ &trans │                     │ &trans │ &kp F7 │ &kp F8 │ &kp F9 │ &kp F10 │ &kp BACKSPACE │
+//    ├───────────┼────────┼──────────┼────────────┼────────┼────────┤                     ├────────┼────────┼────────┼────────┼─────────┼───────────────┤
+//    │  &kp ESC  │ &trans │  &trans  │   &trans   │ &trans │ &trans │                     │ &trans │ &kp F4 │ &kp F5 │ &kp F6 │ &kp F11 │    &trans     │
+//    ├───────────┼────────┼──────────┼────────────┼────────┼────────┼────────┐   ┌────────┼────────┼────────┼────────┼────────┼─────────┼───────────────┤
+//    │  &trans   │ &trans │  &trans  │   &trans   │ &trans │ &trans │ &trans │   │ &trans │ &trans │ &kp F1 │ &kp F2 │ &kp F3 │ &kp F12 │    &trans     │
+//    └───────────┼────────┼──────────┼────────────┼────────┼────────┼────────┘   └────────┼────────┼────────┼────────┼────────┼─────────┼───────────────┘
+//                │ &trans │  &trans  │   &trans   │ &trans │ &trans │                     │ &trans │ &trans │ &trans │ &trans │ &trans  │                
+//                └────────┴──────────┴────────────┴────────┴────────┘                     └────────┴────────┴────────┴────────┴─────────┘                
+  &kp GRAVE   &trans   &kp CAPS   &caps_word   &trans   &trans                         &trans   &kp F7   &kp F8   &kp F9   &kp F10   &kp BACKSPACE
+  &kp ESC     &trans   &trans     &trans       &trans   &trans                         &trans   &kp F4   &kp F5   &kp F6   &kp F11   &trans       
+  &trans      &trans   &trans     &trans       &trans   &trans   &trans       &trans   &trans   &kp F1   &kp F2   &kp F3   &kp F12   &trans       
+              &trans   &trans     &trans       &trans   &trans                         &trans   &trans   &trans   &trans   &trans                 
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
