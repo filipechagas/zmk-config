@@ -54,6 +54,10 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     behaviors {
         trave: tab_grave {
