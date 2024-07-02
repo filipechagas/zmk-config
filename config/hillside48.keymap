@@ -97,12 +97,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //    ├─────┼─────┼─────┼──────────┼──────────┼───┼─────┐   ┌─────┼─────┼──────┼──────┼──────┼──────┼──────┤
 //    │     │  ~  │  !  │    @     │    #     │ ) │     │   │     │     │      │      │      │      │      │
 //    └─────┼─────┼─────┼──────────┼──────────┼───┼─────┘   └─────┼─────┼──────┼──────┼──────┼──────┼──────┘
-//          │     │     │ mo ADJ_L │ mo ADJ_L │ _ │               │     │      │      │      │      │       
+//          │     │     │ mo FUN_L │ mo ADJ_L │ _ │               │     │      │      │      │      │       
 //          └─────┴─────┴──────────┴──────────┴───┘               └─────┴──────┴──────┴──────┴──────┘       
   &kp GRAVE   &kp LEFT_BRACE   &kp AMPERSAND   &kp ASTRK     &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE                               &trans   &trans            &trans          &trans          &trans      &kp BACKSPACE
   &kp ESC     &kp MINUS        &kp DOLLAR      &kp PERCENT   &kp CARET              &kp PIPE                                      &trans   &kp RIGHT_SHIFT   &kp RIGHT_WIN   &kp RIGHT_ALT   &kp RCTRL   &trans       
   &trans      &kp TILDE        &kp EXCL        &kp AT        &kp HASH               &kp RIGHT_PARENTHESIS   &trans       &trans   &trans   &trans            &trans          &trans          &trans      &trans       
-              &trans           &trans          &mo ADJ_L     &mo ADJ_L              &kp UNDER                                     &trans   &trans            &trans          &trans          &trans                   
+              &trans           &trans          &mo FUN_L     &mo ADJ_L              &kp UNDER                                     &trans   &trans            &trans          &trans          &trans                   
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -117,12 +117,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //    ├─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┐   ┌─────┼─────┼──────────┼───┼───┼──────┼───┤
 //    │         │              │      │      │      │     │     │   │     │  ,  │    1     │ 2 │ 3 │  \   │ / │
 //    └─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┘   └─────┼─────┼──────────┼───┼───┼──────┼───┘
-//              │              │      │      │      │     │               │     │ mo SYM_L │ 0 │ . │ bspc │    
+//              │              │      │      │      │     │               │     │ mo ADJ_L │ 0 │ . │ bspc │    
 //              └──────────────┴──────┴──────┴──────┴─────┘               └─────┴──────────┴───┴───┴──────┘    
   &kp LG(GRAVE)   &trans             &trans         &trans         &trans           &trans                         &kp LEFT_BRACKET   &kp N7         &kp N8         &kp N9         &kp RIGHT_BRACKET   &kp ASTRK
   &kp ESC         &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp EQUAL          &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp PLUS            &kp MINUS
   &trans          &trans             &trans         &trans         &trans           &trans   &trans       &trans   &kp COMMA          &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp BACKSLASH       &kp SLASH
-                  &trans             &trans         &trans         &trans           &trans                         &trans             &mo SYM_L      &kp N0         &kp DOT        &kp BACKSPACE                
+                  &trans             &trans         &trans         &trans           &trans                         &trans             &mo ADJ_L      &kp N0         &kp DOT        &kp BACKSPACE                
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
