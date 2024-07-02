@@ -77,12 +77,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┐   ┌─────┼─────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
 //    │    lsft     │      Z      │      X      │      C      │      V      │      B      │ lgui │   │ esc │  N  │      M      │      ,      │      .      │      /      │ rsft │
 //    └─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┘   └─────┼─────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┘
-//                  │    none     │   mo lalt   │  mo NAV_L   │  mo NUM_L   │ mt lgui spc │                │ ent │  mo SYM_L   │  mo ADJ_L   │   mo ralt   │    none     │       
+//                  │             │   mo lalt   │  mo NAV_L   │  mo NUM_L   │ mt lgui spc │                │ ent │  mo SYM_L   │  mo ADJ_L   │   mo ralt   │             │       
 //                  └─────────────┴─────────────┴─────────────┴─────────────┴─────────────┘                └─────┴─────────────┴─────────────┴─────────────┴─────────────┘       
   &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                             &kp Y       &kp U           &kp I              &kp O           &kp P             &kp BACKSPACE   
   &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                             &kp H       &hmr RSHIFT J   &hmr RIGHT_WIN K   &hmr RALT L     &hmr RCTRL SEMI   &kp SINGLE_QUOTE
   &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B                &kp LEFT_WIN       &kp ESC   &kp N       &kp M           &kp COMMA          &kp DOT         &kp SLASH         &kp RSHFT       
-                  &kp none       &mo LEFT_ALT      &mo NAV_L         &mo NUM_L       &mt LEFT_WIN SPACE                                &kp ENTER   &mo SYM_L       &mo ADJ_L          &mo RIGHT_ALT   &kp none                          
+                  &none          &mo LEFT_ALT      &mo NAV_L         &mo NUM_L       &mt LEFT_WIN SPACE                                &kp ENTER   &mo SYM_L       &mo ADJ_L          &mo RIGHT_ALT   &none                             
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
