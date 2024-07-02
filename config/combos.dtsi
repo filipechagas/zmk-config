@@ -29,12 +29,12 @@
 #define COMBO_TERM_SLOW 30
 
 /* Horizontal combos - left hand */
-ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(ret,   &kp RETURN,    LT2 LT1,     DEF, COMBO_TERM_FAST)
+/// ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF, COMBO_TERM_FAST)
+/// ZMK_COMBO(ret,   &kp RETURN,    LT2 LT1,     DEF, COMBO_TERM_FAST)
 
-ZMK_COMBO(cut,   &kp LG(X),     LB3 LB1,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(copy,  &kp LC(INS),   LB3 LB2,     DEF, COMBO_TERM_FAST)
-ZMK_COMBO(paste, &kp LS(INS),   LB2 LB1,     DEF, COMBO_TERM_FAST)
+/// ZMK_COMBO(cut,   &kp LG(X),     LB3 LB1,     DEF, COMBO_TERM_FAST)
+/// ZMK_COMBO(copy,  &kp LC(INS),   LB3 LB2,     DEF, COMBO_TERM_FAST)
+/// ZMK_COMBO(paste, &kp LS(INS),   LB2 LB1,     DEF, COMBO_TERM_FAST)
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(lpar,   &kp LPAR,     RT1 RT2,     DEF, COMBO_TERM_FAST)
@@ -44,15 +44,15 @@ ZMK_COMBO(lbkt,  &kp LBKT,      RB1 RB2,     DEF, COMBO_TERM_FAST)
 ZMK_COMBO(rbkt,  &kp RBKT,      RB2 RB3,     DEF, COMBO_TERM_FAST)
 
 /* Vertical combos - left hand */
-ZMK_COMBO(at,    &kp AT,        LT3 LM3,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(at,    &kp AT,        LT3 LM3,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     DEF, COMBO_TERM_SLOW)
 
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(bslh,  &kp BSLH,      LM2 LB2,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp EQUAL,     LM1 LB1,     DEF, COMBO_TERM_SLOW)
-ZMK_COMBO(tilde, &kp TILDE,     LM0 LB0,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(bslh,  &kp BSLH,      LM2 LB2,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(equal, &kp EQUAL,     LM1 LB1,     DEF, COMBO_TERM_SLOW)
+/// ZMK_COMBO(tilde, &kp TILDE,     LM0 LB0,     DEF, COMBO_TERM_SLOW)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     DEF, COMBO_TERM_SLOW)
