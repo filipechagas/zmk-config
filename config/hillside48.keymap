@@ -29,6 +29,7 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5
 #define THUMBS LP0 LH4 LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4 RP0
 
+#include "macros.dtsi"
 #include "combos.dtsi"
 
 // reuse basic mod-morph scheme
@@ -58,6 +59,15 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
     continue-list = <UNDERSCORE MINUS>;
 };
 
+&lt{
+    flavor = "hold-preferred";
+};
+
+&mt{
+    flavor = "tap-unless-interrupted";
+    tapping-term-ms = <400>;
+};
+
 / {
     behaviors {
         trave: tab_grave {
@@ -74,19 +84,19 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         default_layer {
             bindings = <
-//    ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                ┌─────┬─────────────┬─────────────┬──────────────┬─────────────┬──────┐
-//    │   &trave    │      Q      │      W      │      E      │      R      │      T      │                │  Y  │      U      │      I      │      O       │      P      │ bspc │
-//    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                ├─────┼─────────────┼─────────────┼──────────────┼─────────────┼──────┤
-//    │ mt lctl esc │ &hml lctl A │ &hml lalt S │ &hml lgui D │ &hml lsft F │      G      │                │  H  │ &hmr rsft J │ &hmr rgui K │ &hmr ralt L  │ &hmr rctl ; │  '   │
-//    ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┐   ┌─────┼─────┼─────────────┼─────────────┼──────────────┼─────────────┼──────┤
-//    │    lsft     │      Z      │      X      │      C      │      V      │      B      │ lgui │   │ esc │  N  │      M      │      ,      │      .       │      /      │ rsft │
-//    └─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┘   └─────┼─────┼─────────────┼─────────────┼──────────────┼─────────────┼──────┘
-//                  │             │    lalt     │  mo NAV_L   │  mo NUM_L   │ mt lgui spc │                │ ent │  mo SYM_L   │  mo SYM_L   │ mt ralt bspc │             │       
-//                  └─────────────┴─────────────┴─────────────┴─────────────┴─────────────┘                └─────┴─────────────┴─────────────┴──────────────┴─────────────┘       
-  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                             &kp Y       &kp U           &kp I              &kp O                &kp P             &kp BACKSPACE   
-  &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                             &kp H       &hmr RSHIFT J   &hmr RIGHT_WIN K   &hmr RALT L          &hmr RCTRL SEMI   &kp SINGLE_QUOTE
-  &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B                &kp LEFT_WIN       &kp ESC   &kp N       &kp M           &kp COMMA          &kp DOT              &kp SLASH         &kp RSHFT       
-                  &none          &kp LALT          &mo NAV_L         &mo NUM_L       &mt LEFT_WIN SPACE                                &kp ENTER   &mo SYM_L       &mo SYM_L          &mt RALT BACKSPACE   &none                             
+//    ┌─────────────┬─────────────┬─────────────┬──────────────┬──────────────┬─────────────┐                ┌─────┬─────────────┬───────────────┬─────────────┬─────────────┬──────┐
+//    │   &trave    │      Q      │      W      │      E       │      R       │      T      │                │  Y  │      U      │       I       │      O      │      P      │ bspc │
+//    ├─────────────┼─────────────┼─────────────┼──────────────┼──────────────┼─────────────┤                ├─────┼─────────────┼───────────────┼─────────────┼─────────────┼──────┤
+//    │ mt lctl esc │ &hml lctl A │ &hml lalt S │ &hml lgui D  │ &hml lsft F  │      G      │                │  H  │ &hmr rsft J │  &hmr rgui K  │ &hmr ralt L │ &hmr rctl ; │  '   │
+//    ├─────────────┼─────────────┼─────────────┼──────────────┼──────────────┼─────────────┼──────┐   ┌─────┼─────┼─────────────┼───────────────┼─────────────┼─────────────┼──────┤
+//    │    lsft     │      Z      │      X      │      C       │      V       │      B      │ lgui │   │ esc │  N  │      M      │       ,       │      .      │      /      │ rsft │
+//    └─────────────┼─────────────┼─────────────┼──────────────┼──────────────┼─────────────┼──────┘   └─────┼─────┼─────────────┼───────────────┼─────────────┼─────────────┼──────┘
+//                  │             │    lalt     │ lt NAV_L esc │ lt NUM_L tab │ mt lgui spc │                │ ent │ lt SYM_L '  │ lt ADJ_L bspc │    ralt     │             │
+//                  └─────────────┴─────────────┴──────────────┴──────────────┴─────────────┘                └─────┴─────────────┴───────────────┴─────────────┴─────────────┘
+  &trave          &kp Q          &kp W             &kp E             &kp R           &kp T                                             &kp Y       &kp U                    &kp I              &kp O         &kp P             &kp BACKSPACE
+  &mt LCTRL ESC   &hml LCTRL A   &hml LEFT_ALT S   &hml LEFT_WIN D   &hml LSHIFT F   &kp G                                             &kp H       &hmr RSHIFT J            &hmr RIGHT_WIN K   &hmr RALT L   &hmr RCTRL SEMI   &kp SINGLE_QUOTE
+  &kp LSHFT       &kp Z          &kp X             &kp C             &kp V           &kp B                &kp LEFT_WIN       &kp ESC   &kp N       &kp M                    &kp COMMA          &kp DOT       &kp SLASH         &kp RSHFT
+                  &none          &kp LALT          &lt NAV_L ESC     &lt NUM_L TAB   &mt LEFT_WIN SPACE                                &kp ENTER   &lt SYM_L SINGLE_QUOTE   &lt ADJ_L BSPC     &kp RALT      &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -94,19 +104,19 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         sym_layer {
             bindings = <
-//    ┌─────┬─────┬─────┬──────────┬──────────┬───┐               ┌─────┬──────┬──────┬──────┬──────┬──────┐
-//    │  `  │  {  │  &  │    *     │    (     │ } │               │     │      │      │      │      │ bspc │
-//    ├─────┼─────┼─────┼──────────┼──────────┼───┤               ├─────┼──────┼──────┼──────┼──────┼──────┤
-//    │ esc │  -  │  $  │    %     │    ^     │ | │               │     │ rsft │ rgui │ ralt │ rctl │      │
-//    ├─────┼─────┼─────┼──────────┼──────────┼───┼─────┐   ┌─────┼─────┼──────┼──────┼──────┼──────┼──────┤
-//    │     │  ~  │  !  │    @     │    #     │ ) │     │   │     │     │      │      │      │      │      │
-//    └─────┼─────┼─────┼──────────┼──────────┼───┼─────┘   └─────┼─────┼──────┼──────┼──────┼──────┼──────┘
-//          │     │     │ mo FUN_L │ mo ADJ_L │ _ │               │     │      │      │      │      │       
-//          └─────┴─────┴──────────┴──────────┴───┘               └─────┴──────┴──────┴──────┴──────┘       
+//    ┌─────┬─────┬─────┬─────┬───┬───┐               ┌─────┬──────┬──────┬──────┬──────┬──────┐
+//    │  `  │  {  │  &  │  *  │ ( │ } │               │     │      │      │      │      │ bspc │
+//    ├─────┼─────┼─────┼─────┼───┼───┤               ├─────┼──────┼──────┼──────┼──────┼──────┤
+//    │ esc │  -  │  $  │  %  │ ^ │ | │               │     │ rsft │ rgui │ ralt │ rctl │      │
+//    ├─────┼─────┼─────┼─────┼───┼───┼─────┐   ┌─────┼─────┼──────┼──────┼──────┼──────┼──────┤
+//    │     │  ~  │  !  │  @  │ # │ ) │     │   │     │     │      │      │      │      │      │
+//    └─────┼─────┼─────┼─────┼───┼───┼─────┘   └─────┼─────┼──────┼──────┼──────┼──────┼──────┘
+//          │     │     │     │ ` │ _ │               │     │      │      │      │      │
+//          └─────┴─────┴─────┴───┴───┘               └─────┴──────┴──────┴──────┴──────┘
   &kp GRAVE   &kp LEFT_BRACE   &kp AMPERSAND   &kp ASTRK     &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE                               &trans   &trans            &trans          &trans          &trans      &kp BACKSPACE
-  &kp ESC     &kp MINUS        &kp DOLLAR      &kp PERCENT   &kp CARET              &kp PIPE                                      &trans   &kp RIGHT_SHIFT   &kp RIGHT_WIN   &kp RIGHT_ALT   &kp RCTRL   &trans       
-  &trans      &kp TILDE        &kp EXCL        &kp AT        &kp HASH               &kp RIGHT_PARENTHESIS   &trans       &trans   &trans   &trans            &trans          &trans          &trans      &trans       
-              &trans           &trans          &mo FUN_L     &mo ADJ_L              &kp UNDER                                     &trans   &trans            &trans          &trans          &trans                   
+  &kp ESC     &kp MINUS        &kp DOLLAR      &kp PERCENT   &kp CARET              &kp PIPE                                      &trans   &kp RIGHT_SHIFT   &kp RIGHT_WIN   &kp RIGHT_ALT   &kp RCTRL   &trans
+  &trans      &kp TILDE        &kp EXCL        &kp AT        &kp HASH               &kp RIGHT_PARENTHESIS   &trans       &trans   &trans   &trans            &trans          &trans          &trans      &trans
+              &none            &none           &none         &kp GRAVE              &kp UNDER                                     &trans   &trans            &trans          &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -114,19 +124,19 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         num_layer {
             bindings = <
-//    ┌─────────┬──────────────┬──────┬──────┬──────┬─────┐               ┌─────┬──────────┬───┬───┬───┬──────┐
-//    │ lgui(`) │              │      │      │      │     │               │  [  │    7     │ 8 │ 9 │ ] │ bspc │
-//    ├─────────┼──────────────┼──────┼──────┼──────┼─────┤               ├─────┼──────────┼───┼───┼───┼──────┤
-//    │   esc   │ left_CONTROL │ lalt │ lgui │ lsft │     │               │  =  │    4     │ 5 │ 6 │ + │  -   │
-//    ├─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┐   ┌─────┼─────┼──────────┼───┼───┼───┼──────┤
-//    │         │              │      │      │      │     │     │   │     │  ,  │    1     │ 2 │ 3 │ \ │  /   │
-//    └─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┘   └─────┼─────┼──────────┼───┼───┼───┼──────┘
-//              │              │      │      │      │     │               │     │ mo ADJ_L │ 0 │ . │ * │       
-//              └──────────────┴──────┴──────┴──────┴─────┘               └─────┴──────────┴───┴───┴───┘       
+//    ┌─────────┬──────────────┬──────┬──────┬──────┬─────┐               ┌─────┬───┬───┬─────┬───┬──────┐
+//    │ lgui(`) │              │      │      │      │     │               │  [  │ 7 │ 8 │  9  │ ] │ bspc │
+//    ├─────────┼──────────────┼──────┼──────┼──────┼─────┤               ├─────┼───┼───┼─────┼───┼──────┤
+//    │   esc   │ left_CONTROL │ lalt │ lgui │ lsft │     │               │  -  │ 4 │ 5 │  6  │ + │  =   │
+//    ├─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┐   ┌─────┼─────┼───┼───┼─────┼───┼──────┤
+//    │         │              │      │      │      │     │     │   │     │  ,  │ 1 │ 2 │  3  │ \ │  /   │
+//    └─────────┼──────────────┼──────┼──────┼──────┼─────┼─────┘   └─────┼─────┼───┼───┼─────┼───┼──────┘
+//              │              │      │      │      │     │               │     │ 0 │ . │     │ * │
+//              └──────────────┴──────┴──────┴──────┴─────┘               └─────┴───┴───┴─────┴───┘
   &kp LG(GRAVE)   &trans             &trans         &trans         &trans           &trans                         &kp LEFT_BRACKET   &kp N7         &kp N8         &kp N9         &kp RIGHT_BRACKET   &kp BACKSPACE
-  &kp ESC         &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp EQUAL          &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp PLUS            &kp MINUS    
-  &trans          &trans             &trans         &trans         &trans           &trans   &trans       &trans   &kp COMMA          &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp BACKSLASH       &kp SLASH    
-                  &trans             &trans         &trans         &trans           &trans                         &trans             &mo ADJ_L      &kp N0         &kp DOT        &kp ASTRK                        
+  &kp ESC         &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp MINUS          &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp PLUS            &kp EQUAL
+  &trans          &trans             &trans         &trans         &trans           &trans   &trans       &trans   &kp COMMA          &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp BACKSLASH       &kp SLASH
+                  &trans             &trans         &trans         &trans           &trans                         &trans             &kp N0         &kp DOT        &none          &kp ASTRK
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -141,12 +151,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //    ├─────┼──────────────┼──────┼──────┼──────┼─────┼─────┐   ┌─────┼──────┼─────────┼──────────┼──────┼──────┼──────┤
 //    │     │              │      │      │      │     │     │   │     │      │ lgui({) │ lgui(})  │      │ down │ rght │
 //    └─────┼──────────────┼──────┼──────┼──────┼─────┼─────┘   └─────┼──────┼─────────┼──────────┼──────┼──────┼──────┘
-//          │              │      │      │      │     │               │      │         │ mo FUN_L │      │ left │       
-//          └──────────────┴──────┴──────┴──────┴─────┘               └──────┴─────────┴──────────┴──────┴──────┘       
-  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                         &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp BACKSPACE  
-  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &trans         
+//          │              │      │      │      │     │               │      │         │ mo FUN_L │      │ left │
+//          └──────────────┴──────┴──────┴──────┴─────┘               └──────┴─────────┴──────────┴──────┴──────┘
+  &kp GRAVE   &kp N1             &kp N2         &kp N3         &kp N4           &kp N5                         &kp N6           &kp N7               &kp N8                &kp N9            &kp N0           &kp BACKSPACE
+  &kp ESC     &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_WIN   &kp LEFT_SHIFT   &trans                         &kp LEFT_ARROW   &kp DOWN_ARROW       &kp UP_ARROW          &kp RIGHT_ARROW   &kp UP_ARROW     &trans
   &trans      &trans             &trans         &trans         &trans           &trans   &trans       &trans   &trans           &kp LG(LEFT_BRACE)   &kp LG(RIGHT_BRACE)   &trans            &kp DOWN_ARROW   &kp RIGHT_ARROW
-              &trans             &trans         &trans         &trans           &trans                         &trans           &trans               &mo FUN_L             &trans            &kp LEFT_ARROW                  
+              &trans             &trans         &trans         &trans           &trans                         &trans           &trans               &mo FUN_L             &trans            &kp LEFT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -154,19 +164,19 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         adj_layer {
             bindings = <
-//    ┌──────┬─────────────┬──────────┬──────────┬──────────┬──────────┐                  ┌──────┬──────┬──────┬──────────┬──────────┬───────┐
-//    │      │ to QWERTY_L │          │          │          │          │                  │      │ pscr │      │ epwr_ on │ epwr_ on │       │
-//    ├──────┼─────────────┼──────────┼──────────┼──────────┼──────────┤                  ├──────┼──────┼──────┼──────────┼──────────┼───────┤
-//    │      │  bt_sel 0   │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │                  │ mute │ vold │ volu │          │          │ capsw │
-//    ├──────┼─────────────┼──────────┼──────────┼──────────┼──────────┼────────┐   ┌─────┼──────┼──────┼──────┼──────────┼──────────┼───────┤
-//    │ boot │ &sys_reset  │          │ out_ usb │ out_ ble │          │ bt_clr │   │     │      │      │      │          │          │       │
-//    └──────┼─────────────┼──────────┼──────────┼──────────┼──────────┼────────┘   └─────┼──────┼──────┼──────┼──────────┼──────────┼───────┘
-//           │             │          │          │          │          │                  │      │      │      │          │          │        
-//           └─────────────┴──────────┴──────────┴──────────┴──────────┘                  └──────┴──────┴──────┴──────────┴──────────┘        
-  &none         &to QWERTY_L   &trans         &trans         &none          &none                                   &none        &kp PRINTSCREEN   &none          &ext_power EP_OFF   &ext_power EP_ON   &none     
-  &none         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                            &kp C_MUTE   &kp C_VOL_DN      &kp C_VOL_UP   &none               &none              &caps_word
-  &bootloader   &sys_reset     &none          &out OUT_USB   &out OUT_BLE   &none          &bt BT_CLR       &none   &none        &none             &none          &none               &none              &trans    
-                &trans         &trans         &trans         &trans         &trans                                  &trans       &trans            &trans         &trans              &trans                       
+//    ┌─────┬─────┬──────┬──────────┬─────┬─────┐               ┌──────┬──────┬──────┬──────────┬──────────┬───────┐
+//    │  `  │     │ caps │  capsw   │     │     │               │      │ pscr │      │ epwr_ on │ epwr_ on │       │
+//    ├─────┼─────┼──────┼──────────┼─────┼─────┤               ├──────┼──────┼──────┼──────────┼──────────┼───────┤
+//    │     │     │      │          │     │     │               │ mute │ vold │ volu │          │          │ capsw │
+//    ├─────┼─────┼──────┼──────────┼─────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┼──────────┼──────────┼───────┤
+//    │     │     │      │          │     │     │     │   │     │      │      │      │          │          │       │
+//    └─────┼─────┼──────┼──────────┼─────┼─────┼─────┘   └─────┼──────┼──────┼──────┼──────────┼──────────┼───────┘
+//          │     │      │ mo FUN_L │     │     │               │      │      │      │          │          │
+//          └─────┴──────┴──────────┴─────┴─────┘               └──────┴──────┴──────┴──────────┴──────────┘
+  &kp GRAVE   &trans   &kp CAPS   &caps_word   &none    &none                        &none        &kp PRINTSCREEN   &none          &ext_power EP_OFF   &ext_power EP_ON   &none
+  &none       &none    &none      &none        &none    &none                        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOL_UP   &none               &none              &caps_word
+  &none       &none    &none      &none        &none    &none    &none       &none   &none        &none             &none          &none               &none              &trans
+              &trans   &trans     &mo FUN_L    &trans   &trans                       &trans       &trans            &trans         &trans              &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -174,19 +184,19 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         fun_layer {
             bindings = <
-//    ┌─────┬─────┬──────┬───────┬─────┬─────┐               ┌─────┬─────┬─────┬─────┬─────┬──────┐
-//    │  `  │     │ caps │ capsw │     │     │               │     │ f7  │ f8  │ f9  │ f10 │ bspc │
-//    ├─────┼─────┼──────┼───────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼──────┤
-//    │ esc │     │      │       │     │     │               │     │ f4  │ f5  │ f6  │ f11 │      │
-//    ├─────┼─────┼──────┼───────┼─────┼─────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼──────┤
-//    │     │     │      │       │     │     │     │   │     │     │ f1  │ f2  │ f3  │ f12 │      │
-//    └─────┼─────┼──────┼───────┼─────┼─────┼─────┘   └─────┼─────┼─────┼─────┼─────┼─────┼──────┘
-//          │     │      │       │     │     │               │     │     │     │     │     │       
-//          └─────┴──────┴───────┴─────┴─────┘               └─────┴─────┴─────┴─────┴─────┘       
-  &kp GRAVE   &trans   &kp CAPS   &caps_word   &trans   &trans                         &trans   &kp F7   &kp F8   &kp F9   &kp F10   &kp BACKSPACE
-  &kp ESC     &trans   &trans     &trans       &trans   &trans                         &trans   &kp F4   &kp F5   &kp F6   &kp F11   &trans       
-  &trans      &trans   &trans     &trans       &trans   &trans   &trans       &trans   &trans   &kp F1   &kp F2   &kp F3   &kp F12   &trans       
-              &trans   &trans     &trans       &trans   &trans                         &trans   &trans   &trans   &trans   &trans                 
+//    ┌─────┬──────────┬──────────┬──────────┬──────────┬──────────┐               ┌─────┬─────┬─────┬─────┬─────┬──────┐
+//    │  `  │          │   caps   │  capsw   │          │          │               │     │ f7  │ f8  │ f9  │ f10 │ bspc │
+//    ├─────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├─────┼─────┼─────┼─────┼─────┼──────┤
+//    │ esc │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │               │     │ f4  │ f5  │ f6  │ f11 │      │
+//    ├─────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼──────┤
+//    │     │          │          │          │          │          │     │   │     │     │ f1  │ f2  │ f3  │ f12 │      │
+//    └─────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────┘   └─────┼─────┼─────┼─────┼─────┼─────┼──────┘
+//          │          │          │          │          │          │               │     │     │     │     │     │
+//          └──────────┴──────────┴──────────┴──────────┴──────────┘               └─────┴─────┴─────┴─────┴─────┘
+  &kp GRAVE   &trans         &kp CAPS       &caps_word     &trans         &trans                               &trans   &kp F7   &kp F8   &kp F9   &kp F10   &kp BACKSPACE
+  &kp ESC     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                         &trans   &kp F4   &kp F5   &kp F6   &kp F11   &trans
+  &trans      &trans         &trans         &trans         &trans         &trans         &trans       &trans   &trans   &kp F1   &kp F2   &kp F3   &kp F12   &trans
+              &trans         &trans         &trans         &trans         &trans                               &trans   &trans   &trans   &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
