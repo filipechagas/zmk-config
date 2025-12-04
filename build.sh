@@ -1,27 +1,32 @@
 #!/bin/bash
 
-# Initialize and update west
-west init -l config
-west update
+# Initialize west only if not already initialized
+if [ ! -d ".west" ]; then
+  west init -l config
+fi
+
+# Update and export (force update to get latest manifest changes)
+west update --fetch always
+west zephyr-export
 
 # Export CMAKE_PREFIX_PATH
 export "CMAKE_PREFIX_PATH=/zmk-config/zephyr:$CMAKE_PREFIX_PATH"
 
 # Build left side
 west build -d /build/left -p -b "nice_nano_v2" \
-  -s /zmk-config/zmk/app \
+  -s zmk/app \
   -- -DSHIELD="hillside48_left" \
   -DZMK_CONFIG="/zmk-config/config"
 
 # Build right side
 west build -d /build/right -p -b "nice_nano_v2" \
-  -s /zmk-config/zmk/app \
+  -s zmk/app \
   -- -DSHIELD="hillside48_right" \
   -DZMK_CONFIG="/zmk-config/config"
 
 # Build settings reset
 west build -d /build/settings_reset -p -b "nice_nano_v2" \
-  -s /zmk-config/zmk/app \
+  -s zmk/app \
   -- -DSHIELD="settings_reset" \
   -DZMK_CONFIG="/zmk-config/config"
 
